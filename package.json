@@ -1,0 +1,24 @@
+{
+  "name": "sawmill",
+  "version": "0.0.0",
+  "description": "Process logs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbuck/sawmill.git"
+  },
+  "author": "Jon Buckley <jon@jbuckley.ca>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jbuck/sawmill/issues"
+  },
+  "homepage": "https://github.com/jbuck/sawmill",
+  "dependencies": {
+    "async": "^0.4.0",
+    "aws-sdk": "^2.0.0-rc13",
+    "webmaker-postalservice": "^0.2.7"
+  }
+}
