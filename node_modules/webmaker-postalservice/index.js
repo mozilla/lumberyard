@@ -21,6 +21,7 @@ module.exports = function(options) {
 
   var templates = {
     createEventEmail: nunjucksEnv.getTemplate("create_event.html"),
+    mofoStaffEmail: nunjucksEnv.getTemplate("mofo_staff_new_event.html"),
     welcomeEmail: nunjucksEnv.getTemplate("welcome.html")
   };
 
@@ -76,11 +77,49 @@ module.exports = function(options) {
         ses.sendEmail({
           Source: "help@webmaker.org",
           Destination: {
-            ToAddresses: [options.to],
+            ToAddresses: [options.to]
           },
           Message: {
             Subject: {
               Data: "Welcome to Webmaker. Let's get you started.",
+              Charset: "utf8"
+            },
+            Body: {
+              Text: {
+                Data: email.text,
+                Charset: "utf8"
+              },
+              Html: {
+                Data: email.html,
+                Charset: "utf8"
+              }
+            }
+          }
+        }, callback);
+      });
+    },
+    sendMofoStaffEmail: function(options, callback) {
+      var html = templates.mofoStaffEmail.render({
+        email: options.email,
+        username: options.username,
+        eventId: options.eventId
+      });
+
+      premailer.prepare({
+        html: html
+      }, function(err, email) {
+        if (err) {
+          return callback(err);
+        }
+
+        ses.sendEmail({
+          Source: "help@webmaker.org",
+          Destination: {
+            ToAddresses: [options.to]
+          },
+          Message: {
+            Subject: {
+              Data: "A new event was created",
               Charset: "utf8"
             },
             Body: {

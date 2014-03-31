@@ -19,6 +19,7 @@
   "dependencies": {
     "async": "^0.4.0",
     "aws-sdk": "^2.0.0-rc13",
-    "webmaker-postalservice": "^0.2.7"
+    "hyperquest": "^0.2.0",
+    "webmaker-postalservice": "^0.2.9"
   }
 }

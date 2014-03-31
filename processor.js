@@ -5,19 +5,23 @@ var processor = require("./processor/processor")({
   queueUrl: process.env.AWS_QUEUE_URL
 });
 
-var workers = require("./workers");
+var workers = require("./workers")({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  mofoStaffEmail: process.env.MOFO_STAFF_EMAIL
+});
 
 var async = require("async");
 
 var queue = async.queue(function(message, queue_done) {
+  if (!workers[message.ParsedBody.event_type]) {
+    return queue_done();
+  }
   async.waterfall([
     function(w_done) {
-      w_done(null, message);
+      w_done(null, message.ParsedBody.data);
     },
-    workers.create_user_emailer({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-    })
+    workers[message.ParsedBody.event_type]
   ], function(err) {
     if (err) {
       throw err;
