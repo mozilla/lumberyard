@@ -1,5 +1,5 @@
 {
-  "name": "sawmill",
+  "name": "lumberyard",
   "version": "0.0.0",
   "description": "Process logs",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbuck/sawmill.git"
+    "url": "https://github.com/jbuck/lumberyard.git"
   },
   "author": "Jon Buckley <jon@jbuckley.ca>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jbuck/sawmill/issues"
+    "url": "https://github.com/jbuck/lumberyard/issues"
   },
-  "homepage": "https://github.com/jbuck/sawmill",
+  "homepage": "https://github.com/jbuck/lumberyard",
   "dependencies": {
     "async": "^0.4.0",
     "aws-sdk": "^2.0.0-rc13",
