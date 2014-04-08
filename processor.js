@@ -1,55 +1,37 @@
-var processor = require("./processor/processor")({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: process.env.AWS_QUEUE_REGION,
-  queueUrl: process.env.AWS_QUEUE_URL
-});
-
 var workers = require("./workers")({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   mofoStaffEmail: process.env.MOFO_STAFF_EMAIL
 });
 
-var async = require("async");
+var SqsQueueParallel = require('sqs-queue-parallel');
+var config = {
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  name: process.env.INCOMING_QUEUE_NAME,
+  region: process.env.AWS_QUEUE_REGION,
+  debug: process.env.DEBUG
+};
 
-var queue = async.queue(function(message, queue_done) {
-  if (!workers[message.ParsedBody.event_type]) {
-    return queue_done();
+var queue = new SqsQueueParallel(config);
+
+queue.on("message", function(m) {
+  if (!workers[m.data.event_type] || !m.data.data) {
+    return m.next();
   }
-  async.waterfall([
-    function(w_done) {
-      w_done(null, message.ParsedBody.data);
-    },
-    workers[message.ParsedBody.event_type]
-  ], function(err) {
-    if (err) {
-      throw err;
+
+  workers[m.data.event_type](m.data.data,function(err) {
+    if ( err ) {
+      console.log(err);
+      return m.next();
     }
 
-    processor.done(message, queue_done);
+    m.delete(function(err) {
+      if ( err ) {
+        console.log(err);
+      }
+
+      m.next();
+    });
   });
-}, 1);
-
-async.forever(function(next) {
-  processor.fetch(function(err, messages) {
-    if (err) {
-      return next(err);
-    }
-
-    if (messages.Messages) {
-      messages.Messages = messages.Messages.map(function(m) {
-        m.ParsedBody = JSON.parse(m.Body);
-        return m;
-      });
-      queue.push(messages.Messages);
-      queue.drain = next;
-    } else {
-      next();
-    }
-  });
-}, function(err) {
-  if (err) {
-    throw err;
-  }
 });

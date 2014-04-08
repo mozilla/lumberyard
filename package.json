@@ -17,9 +17,8 @@
   },
   "homepage": "https://github.com/jbuck/lumberyard",
   "dependencies": {
-    "async": "^0.4.0",
-    "aws-sdk": "^2.0.0-rc13",
     "hyperquest": "^0.2.0",
+    "sqs-queue-parallel": "^0.1.3",
     "webmaker-postalservice": "^0.2.9"
   }
 }
