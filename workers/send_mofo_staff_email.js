@@ -4,6 +4,7 @@ module.exports = function(mofoStaffEmail, mailer) {
       username: data.username,
       email: data.email,
       eventId: data.eventId,
+      locale: data.locale,
       to: mofoStaffEmail
     }, cb);
   };
