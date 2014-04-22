@@ -4,7 +4,25 @@ var AWS = require("aws-sdk"),
       new nunjucks.FileSystemLoader(__dirname + "/templates/"),
       { autoescape: true }
     ),
-    premailer = require('premailer-api');
+    premailer = require('premailer-api'),
+    i18n = require('webmaker-i18n'),
+    path = require('path');
+
+// Setup locales with i18n
+i18n.middleware({
+  supported_languages: ['*'],
+  default_lang: "en-US",
+  translation_directory: path.resolve(__dirname, "locale")
+});
+
+nunjucksEnv.addFilter("instantiate", function (input) {
+  var tmpl = new nunjucks.Template(input);
+  return tmpl.render(this.getVariables());
+});
+
+function isLanguageSupport(locale) {
+  return i18n.getSupportLanguages().indexOf(locale) !== -1;
+};
 
 module.exports = function(options) {
   if (!options.key) {
@@ -27,8 +45,11 @@ module.exports = function(options) {
 
   return {
     sendCreateEventEmail: function(options, callback) {
+      options.locale = isLanguageSupport(options.locale) ? options.locale : "en-US";
       var html = templates.createEventEmail.render({
-        fullName: options.fullName
+        fullName: options.fullName,
+        gettext: i18n.getStrings(options.locale),
+        locale: options.locale
       });
 
       premailer.prepare({
@@ -45,7 +66,7 @@ module.exports = function(options) {
           },
           Message: {
             Subject: {
-              Data: "Next steps for your event",
+              Data: i18n.gettext("Next steps for your event", options.locale),
               Charset: "utf8"
             },
             Body: {
@@ -63,8 +84,11 @@ module.exports = function(options) {
       });
     },
     sendWelcomeEmail: function(options, callback) {
+      options.locale = isLanguageSupport(options.locale) ? options.locale : "en-US";
       var html = templates.welcomeEmail.render({
-        fullName: options.fullName
+        fullName: options.fullName,
+        gettext: i18n.getStrings(options.locale),
+        locale: options.locale
       });
 
       premailer.prepare({
@@ -81,7 +105,7 @@ module.exports = function(options) {
           },
           Message: {
             Subject: {
-              Data: "Welcome to Webmaker. Let's get you started.",
+              Data: i18n.gettext("emailTitle", options.locale),
               Charset: "utf8"
             },
             Body: {

@@ -13,35 +13,32 @@
     </style>
   </head>
   <body>
-    <p>Hello {{fullName}},</p>
+    <p>{{ gettext.heyFullName | instantiate }}</p>
 
-    <p>Thank you for registering your event on our global map and joining our community around the world hosting Maker Party’s. We're excited to teach and learn the web with you! The key to a successful event is planning, so we've put together a checklist to help you along the way:</p>
+    <p>{{ gettext.p1ThanksForRegistering }}</p>
 
-    <p><strong>Before your event</strong></p>
+    <p><strong>{{ gettext.beforeYourEvent }}</strong></p>
     <ul>
-      <li>Visit our <a href="https://wiki.mozilla.org/Maker_Party/Get_involved">Get Involved</a> page for everything you need to throw your party.</li>
-      <li>Start planning using these helpful <a href="https://webmaker.org/event-guides">event guides</a>.</li>
-      <li>Request a free <a href="https://intlstore.mozilla.org/makerparty/">Maker Party gear pack</a> that includes stickers, t-shirts and banners.</li>
+      <li>{{ gettext.visitOurGetInvolved | safe }}</li>
+      <li>{{ gettext.startPlanningUsingThese | instantiate | safe }}</li>
+      <li>{{ gettext.requestGear | safe }}</li>
     </ul>
-    <p><strong>During your event</strong></p>
+    <p><strong>{{ gettext.duringYourEvent }}</strong></p>
     <ul>
-      <li>Remember to document everything with photos, videos, quotes and whatever else might be helpful to sharing the event afterwards.</li>
-      <li>Share the details of your party on Twitter with the <a href="https://twitter.com/search?q=%23teachtheweb">#teachtheweb</a> hashtag or the <a href="https://twitter.com/webmaker">@webmaker</a> handle. We will be watching!</li>
+      <li>{{ gettext.rememberToDocument }}</li>
+      <li>{{ gettext.shareTheDetails | safe }}</li>
     </ul>
-    <p><strong>After your event</strong></p>
+    <p><strong>{{ gettext.afterYourEvent }}</strong></p>
     <ul>
-      <li>Help us improve events by sending us links to your pictures, blogs, makes, and most importantly; your feedback to <a href="mailto:makerparty@mozilla.org">makerparty@mozilla.org</a>.</li>
-      <li>Take what you’ve learned and teach others by becoming a <a href="https://blog.webmaker.org/mentor">mentor</a>.</li>
-      <li><a href="https://webmaker.org/events/">Host another event</a>!</li>
+      <li>{{ gettext.helpUsImprove | safe }}</li>
+      <li>{{ gettext.takeWhatYouHaveLearned | instantiate | safe }}</li>
+      <li>{{ gettext.hostAnotherEvent | instantiate | safe }}</li>
     </ul>
 
-    <p>If you have questions, ideas for collaboration or information you'd like to share with us, don't hesitate to reach out. We also have this helpful <a href="https://wiki.mozilla.org/Maker_Party/FAQs">FAQ</a> that might be a good place to start.</p>
+    <p>{{ gettext.ifYouHaveQuestion | safe }}</p>
 
-    <p>Cheers!
-    <br>
-    Amira
-    </p>
+    <p>{{ gettext.cheersAmiraEvent | safe }}</p>
 
-    <p class="unsubscribe">If you do not wish to receive any more emails from Mozilla Webmaker you can change your <a href="https://login.webmaker.org/account">email preferences</a>.</p>
+    <p class="unsubscribe">{{ gettext.unsubscribe | instantiate | safe }}</p>
   </body>
 </html>

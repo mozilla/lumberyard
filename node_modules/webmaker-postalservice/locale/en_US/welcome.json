@@ -1,0 +1,46 @@
+{
+  "WelcomeToWebMaker": {
+    "message": "Welcome to Webmaker!",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "emailTitle": {
+    "message": "Welcome to Webmaker. Let's get you started.",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "heyFullName": {
+    "message": "Hey {{ fullName }},",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "p1WelcomeToMozillaWebmaker": {
+    "message": "Welcome to Mozilla Webmaker! Thank you for joining us to explore, play and create together to build a web that's open and made by everyone.",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "p2YouCanGetStartedRightNow": {
+    "message": "You can get started right now with these free tools:",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "li1GogglesItem": {
+    "message": "<em><a href=\"https://goggles.webmaker.org/{{locale}}\" target=\"_blank\" title=\"X-Ray Goggles\">X-Ray Goggles</a></em> allow you to <strong>see the code behind any webpage</strong> and remix elements with a single click, swapping in your own text and images.",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "li2ThimbleItem": {
+    "message": "<em><a href=\"https://thimble.webmaker.org/{{locale}}\" target=\"_blank\" title=\"Thimble\">Thimble</a></em>, an easy-to-use HTML and CSS editor, lets you <strong>learn code by writing it directly in your browser</strong> to create your own webpage.",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "li3PopcornItem": {
+    "message": "<em><a href=\"https://popcorn.webmaker.org/{{locale}}\" target=\"_blank\" title=\"Popcorn Maker\">Popcorn Maker</a></em> helps you <strong>combine content from across the web</strong> like GIFs, music, photos and videos into cool mashups that you can annotate and share.",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "lastParagraph": {
+    "message": "I'm so glad you've joined the Webmaker community. If you have questions, feel free to email me or tweet @webmaker. I'm looking forward to seeing  what you make on the web!",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "cheersAmira": {
+    "message": "Cheers,<br>Amira<br>Webmaker Community Manager",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  },
+  "unsubscribe": {
+    "message": "If you do not wish to receive any more emails from Mozilla Webmaker you can change your <a href=\"https://login.webmaker.org/{{locale}}/account\">email preferences</a>.",
+    "description": "Please see this sample in Thimble page https://aali.makes.org/thimble/MTY3MzMzMDY4OA==/email-localization"
+  }
+}
