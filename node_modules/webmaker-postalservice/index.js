@@ -40,7 +40,8 @@ module.exports = function(options) {
   var templates = {
     createEventEmail: nunjucksEnv.getTemplate("create_event.html"),
     mofoStaffEmail: nunjucksEnv.getTemplate("mofo_staff_new_event.html"),
-    welcomeEmail: nunjucksEnv.getTemplate("welcome.html")
+    welcomeEmail: nunjucksEnv.getTemplate("welcome.html"),
+    badgeAwarded: nunjucksEnv.getTemplate("badge_awarded.html")
   };
 
   return {
@@ -67,6 +68,46 @@ module.exports = function(options) {
           Message: {
             Subject: {
               Data: i18n.gettext("Next steps for your event", options.locale),
+              Charset: "utf8"
+            },
+            Body: {
+              Text: {
+                Data: email.text,
+                Charset: "utf8"
+              },
+              Html: {
+                Data: email.html,
+                Charset: "utf8"
+              }
+            }
+          }
+        }, callback);
+      });
+    },
+    sendBadgeAwardedEmail: function(options, callback) {
+      options.locale = isLanguageSupport(options.locale) ? options.locale : "en-US";
+      var html = templates.badgeAwarded.render({
+        email: options.email,
+        badge: options.badge,
+        gettext: i18n.getStrings(options.locale),
+        locale: options.locale
+      });
+
+      premailer.prepare({
+        html: html
+      }, function(err, email) {
+        if (err) {
+          return callback(err);
+        }
+
+        ses.sendEmail({
+          Source: "help@webmaker.org",
+          Destination: {
+            ToAddresses: [options.to]
+          },
+          Message: {
+            Subject: {
+              Data: i18n.gettext("badgesTitle", options.locale),
               Charset: "utf8"
             },
             Body: {

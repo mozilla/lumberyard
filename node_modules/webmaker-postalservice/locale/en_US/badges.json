@@ -1,0 +1,23 @@
+{
+  "badgesTitle": {
+    "message": "You got a badge!",
+    "description": "Badges email"
+  },
+  "badgesYouGotABadge": {
+    "message": "You got a <a href=\"https://webmaker.org/badges/{{ badge.slug }}\">{{ badge.name }} badge</a>!",
+    "description": "Badges email"
+  },
+  "badgesHey": {
+    "message": "Hi!",
+    "description": "Badges email"
+  },
+  "badgesThanks": {
+    "message": "You earned it.",
+    "description": "Badges email"
+  },
+  "fromWebmaker": {
+    "message": "– Webmaker",
+    "description": "From Webmaker"
+  }
+
+}

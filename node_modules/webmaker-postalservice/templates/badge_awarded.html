@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ gettext.badgesTitle | instantiate }}</title>
+    <style>
+      p, li {
+        font: 14px/16px "Helvetica Neue", Helvetica, sans-serif;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>{{ gettext.badgesHey | instantiate }}</p>
+
+    <p>{{ gettext.badgesYouGotABadge | instantiate | safe }}</p>
+
+    <p>{{ gettext.badgesThanks }}</p>
+
+    <p>{{ gettext.fromWebmaker}}</p>
+  </body>
+</html>
