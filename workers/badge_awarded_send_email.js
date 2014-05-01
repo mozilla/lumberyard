@@ -3,6 +3,7 @@ module.exports = function(mailer) {
     mailer.sendBadgeAwardedEmail({
       user: data.user,
       badge: data.badge,
+      comment: data.comment,
       locale: data.locale,
       to: data.email
     }, cb);
