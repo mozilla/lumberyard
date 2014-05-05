@@ -14,6 +14,8 @@
 
     <p>{{ gettext.badgesYouGotABadge | instantiate | safe }}</p>
 
+    {% if comment %}<p>{{ comment }}</p>{% endif %}
+
     <p>{{ gettext.badgesThanks }}</p>
 
     <p>{{ gettext.fromWebmaker}}</p>

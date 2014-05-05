@@ -89,6 +89,7 @@ module.exports = function(options) {
       var html = templates.badgeAwarded.render({
         email: options.email,
         badge: options.badge,
+        comment: options.comment,
         gettext: i18n.getStrings(options.locale),
         locale: options.locale
       });
