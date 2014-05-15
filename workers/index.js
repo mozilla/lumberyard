@@ -2,7 +2,8 @@ module.exports = function(config) {
 
   var mailer = require("webmaker-postalservice")({
     key: config.accessKeyId,
-    secret: config.secretAccessKey
+    secret: config.secretAccessKey,
+    webmakerURL: config.webmakerURL
   });
 
   return {
