@@ -32,6 +32,8 @@ module.exports = function(options) {
     throw 'aws "secret" required';
   }
 
+  var webmakerURL = options.webmakerURL || 'https://webmaker.org';
+
   var ses = new AWS.SES({
     accessKeyId: options.key,
     secretAccessKey: options.secret
@@ -96,11 +98,11 @@ module.exports = function(options) {
       if (options.badge.slug === 'webmaker-super-mentor') {
         template = 'badgeAwardedSuperMentor';
         subject = 'badgeAwardedSuperMentorSubject';
-        from = 'info@webmaker.org';
+        from = 'Michelle Thorne <help@webmaker.org>';
       } else {
         template = 'badgeAwarded';
         subject = 'badgeAwardedSubject';
-        from = 'Michelle Thorne <info@webmaker.org>';
+        from = 'help@webmaker.org';
       }
 
       var html = templates[template].render({
@@ -108,7 +110,8 @@ module.exports = function(options) {
         badge: options.badge,
         comment: options.comment,
         gettext: i18n.getStrings(options.locale),
-        locale: options.locale
+        locale: options.locale,
+        webmakerURL: webmakerURL
       });
 
       premailer.prepare({

@@ -10,14 +10,17 @@
     </style>
   </head>
   <body>
-    <p>{{ gettext.badgesHey | instantiate }}</p>
+    <p>{{ gettext.badges1 | instantiate | safe }}</p>
 
-    <p>{{ gettext.badgesYouGotABadge | instantiate | safe }}</p>
-
-    {% if comment %}<p>{{ comment }}</p>{% endif %}
+    {% if comment %}
+    <p>{{ gettext.badgesYourComments }}</p>
+    <p>{{ comment }}</p>
+    {% endif %}
 
     <p>{{ gettext.badgesThanks }}</p>
 
-    <p>{{ gettext.fromWebmaker}}</p>
+     <p><strong>Michelle Thorne</strong>
+    <br>Director of Community Strategy
+    <br>Mozilla Webmaker</p>
   </body>
 </html>

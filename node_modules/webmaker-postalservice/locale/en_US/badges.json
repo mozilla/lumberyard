@@ -4,31 +4,27 @@
     "description": "Generic badges subject"
   },
   "badgesTitle": {
-    "message": "You got a badge!",
+    "message": "You got a {{ badge.name }} badge!",
     "description": "Badges email"
   },
-  "badgesYouGotABadge": {
-    "message": "You got a <a href=\"https://webmaker.org/badges/{{ badge.slug }}\">{{ badge.name }} badge</a>!",
+  "badges1": {
+    "message": "Congratulations! You earned the <a href=\"{{ webmakerURL }}/badges/{{ badge.slug }}\">{{ badge.name }} badge</a>.  You can view it now on your {{ webmakerURL }} profile page.",
     "description": "Badges email"
   },
-  "badgesHey": {
-    "message": "Hi!",
+  "badgesYourComments": {
+    "message": "The mentor who issued your badge had some comments for you:",
     "description": "Badges email"
   },
   "badgesThanks": {
-    "message": "You earned it.",
+    "message": "Here's to a continued future of making and learning the web together,",
     "description": "Badges email"
-  },
-  "fromWebmaker": {
-    "message": "– Webmaker",
-    "description": "From Webmaker"
   },
   "badgeAwardedSuperMentorSubject": {
     "message": "Congratulations, Webmaker Super Mentor! What's next?",
     "description": "Super mentor email subject"
   },
   "badgeAwardedSuperMentorP1": {
-    "message": "Congratulations! You earned the Webmaker Super Mentor badge. You can view it now on your webmaker.org profile page.",
+    "message": "Congratulations! You earned the <a href=\"{{ webmakerURL }}/badges/webmaker-super-mentor\">Webmaker Super Mentor</a> badge. You can view it now on your {{ webmakerURL }} profile page.",
     "description": "Super mentor email"
   },
   "badgeAwardedSuperMentorP2": {
