@@ -41,7 +41,8 @@ module.exports = function(options) {
     createEventEmail: nunjucksEnv.getTemplate("create_event.html"),
     mofoStaffEmail: nunjucksEnv.getTemplate("mofo_staff_new_event.html"),
     welcomeEmail: nunjucksEnv.getTemplate("welcome.html"),
-    badgeAwarded: nunjucksEnv.getTemplate("badge_awarded.html")
+    badgeAwarded: nunjucksEnv.getTemplate("badge_awarded.html"),
+    badgeAwardedSuperMentor: nunjucksEnv.getTemplate("badge_awarded_super_mentor.html")
   };
 
   return {
@@ -86,7 +87,23 @@ module.exports = function(options) {
     },
     sendBadgeAwardedEmail: function(options, callback) {
       options.locale = isLanguageSupport(options.locale) ? options.locale : "en-US";
-      var html = templates.badgeAwarded.render({
+
+      // Use the right template
+      var template;
+      var subject;
+      var from;
+
+      if (options.badge.slug === 'webmaker-super-mentor') {
+        template = 'badgeAwardedSuperMentor';
+        subject = 'badgeAwardedSuperMentorSubject';
+        from = 'info@webmaker.org';
+      } else {
+        template = 'badgeAwarded';
+        subject = 'badgeAwardedSubject';
+        from = 'Michelle Thorne <info@webmaker.org>';
+      }
+
+      var html = templates[template].render({
         email: options.email,
         badge: options.badge,
         comment: options.comment,
@@ -102,13 +119,13 @@ module.exports = function(options) {
         }
 
         ses.sendEmail({
-          Source: "help@webmaker.org",
+          Source: from,
           Destination: {
             ToAddresses: [options.to]
           },
           Message: {
             Subject: {
-              Data: i18n.gettext("badgesTitle", options.locale),
+              Data: i18n.gettext(subject, options.locale),
               Charset: "utf8"
             },
             Body: {

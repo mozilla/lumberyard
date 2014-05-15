@@ -1,4 +1,8 @@
 {
+  "badgeAwardedSubject": {
+    "message": "Congratulations, you got a Webmaker badge!",
+    "description": "Generic badges subject"
+  },
   "badgesTitle": {
     "message": "You got a badge!",
     "description": "Badges email"
@@ -18,6 +22,49 @@
   "fromWebmaker": {
     "message": "– Webmaker",
     "description": "From Webmaker"
+  },
+  "badgeAwardedSuperMentorSubject": {
+    "message": "Congratulations, Webmaker Super Mentor! What's next?",
+    "description": "Super mentor email subject"
+  },
+  "badgeAwardedSuperMentorP1": {
+    "message": "Congratulations! You earned the Webmaker Super Mentor badge. You can view it now on your webmaker.org profile page.",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP2": {
+    "message": "The Webmaker Super Mentor badge recognizes your excellent knowledge of web literacy, of teaching others and your community leadership. It is the highest recognition in the Webmaker ecosystem.",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP3": {
+    "message": "As a Webmaker Super Mentor,  we could use your help to keep building the Webmaker ecosystem:",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP4": {
+    "message": "<strong>Badge new Webmaker Mentors</strong>. Super Mentors like you review Webmaker Mentor applications. If the application fulfills the criteria, you have the power to issue them a badge. A discerning eye and empathetic communication are needed to do this well. It's the most important action towards growing our community at scale, but with quality and focus. We're still building this new feature, but when it's ready we'll send you an email about how it works.",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP5": {
+    "message": "<strong>Empower Webmaker Mentors through training</strong>. Lend a hand in a Webmaker Training or run your own to help new mentors learn web skills and improve how they teach and participate in local communities: <a href=\"http://training.webmakerprototypes.org\">http://training.webmakerprototypes.org</a>",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP6": {
+    "message": "<strong>Participate in strategic decision-making for Webmaker</strong>. Get early access and join consultations about the future of Webmaker in our weekly community calls: <a href=\"https://wiki.mozilla.org/Webmaker/Mentor/Community_Calls\">https://wiki.mozilla.org/Webmaker/Mentor/Community_Calls</a>",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP7": {
+    "message": "<p>If you're interested, you can also raise your visibility within the Webmaker community.</p> <p>Share your stories with Webmaker on social media and our community mailing list: <a href=\"https://lists.mozilla.org/listinfo/webmaker\">https://lists.mozilla.org/listinfo/webmaker</a></p>",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP8": {
+    "message": "You can also reply to this message if you'd like to have your profile page featured on webmaker.org, so that other mentors can contact you and learn from your experiences.",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorP9": {
+    "message": "Thanks for your leadership and contribution to Webmaker so far!",
+    "description": "Super mentor email"
+  },
+  "badgeAwardedSuperMentorSalulation": {
+    "message": "Here's to a continued future of making and learning the web together,",
+    "description": "Super mentor email salutation"
   }
-
 }
