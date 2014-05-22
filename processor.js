@@ -2,7 +2,9 @@ var workers = require("./workers")({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   mofoStaffEmail: process.env.MOFO_STAFF_EMAIL,
-  webmakerURL: process.env.WEBMAKER_URL
+  webmakerURL: process.env.WEBMAKER_URL,
+  googleUsername: process.env.GOOGLE_USERNAME,
+  googlePassword: process.env.GOOGLE_PASSWORD
 });
 
 var SqsQueueParallel = require('sqs-queue-parallel');

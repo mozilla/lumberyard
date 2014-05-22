@@ -19,6 +19,7 @@ module.exports = function(config) {
     send_event_host_email: require("./create_event_emailer")(mailer),
     sign_up_for_bsd: require("./sign_up_for_bsd"),
     send_mofo_staff_email: require("./send_mofo_staff_email")(config.mofoStaffEmail, mailer),
-    badge_awarded_send_email: require("./badge_awarded_send_email")(mailer)
+    badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
+    google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword)
   };
 };
