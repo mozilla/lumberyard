@@ -1,10 +1,12 @@
 var should = require('should');
-var habitat = require('habitat');
+var Habitat = require('habitat');
 
 describe('Suggest Featured Resource', function() {
 
   // Environment
-  var env = habitat.load();
+  Habitat.load();
+
+  var env = new Habitat();
 
   // Google Spreadsheet
   var PUBLIC_SHEET_KEY = '1swJ87dr03nxhYvn7uJoWpybE3kcLV2bW3OGoJ-H-z3o';
