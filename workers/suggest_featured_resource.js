@@ -5,6 +5,10 @@ module.exports = function (worksheet, spreadsheet, username, password) {
       if (err) {
         return cb(err);
       }
+
+      // Prepare extra fields
+      data.date = new Date();
+
       spreadsheet.addRow(worksheet, data, function (err, row) {
         if (err) {
           return cb(err);

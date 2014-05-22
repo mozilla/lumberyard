@@ -31,6 +31,8 @@ queue.on("message", function(m) {
       return m.next();
     }
 
+    console.log(m);
+
     m.delete(function(err) {
       if ( err ) {
         console.log(err);

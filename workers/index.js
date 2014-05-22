@@ -24,6 +24,6 @@ module.exports = function(config) {
     sign_up_for_bsd: require("./sign_up_for_bsd"),
     send_mofo_staff_email: require("./send_mofo_staff_email")(config.mofoStaffEmail, mailer),
     badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
-    suggest_featured_resource: require("./suggest_featured_resource")(config.worksheet, spreadsheet, config.googleUsername, config.googlePassword, )
+    suggest_featured_resource: require("./suggest_featured_resource")(config.worksheet, spreadsheet, config.googleUsername, config.googlePassword)
   };
 };
