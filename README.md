@@ -24,7 +24,7 @@ GOOGLE_PASSWORD= (any valid password, required for tests to pass)
 
 ### Mailer
 
-This worker allows you add a row to any Google spreadsheet with basic auth.
+This worker allows you to send HTML emails to any number of recipients.
 
 #### Notification message
 
@@ -51,7 +51,7 @@ aws sqs send-message --queue-url  https://sqs.us-east-1.amazonaws.com/<<QUEUE NA
 
 ### Google Spreadsheet
 
-This worker allows you to send HTML emails to any number of recipients.
+This worker allows you add a row to any Google spreadsheet with basic auth.
 
 #### Notification message
 
