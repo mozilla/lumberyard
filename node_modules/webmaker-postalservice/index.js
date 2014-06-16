@@ -64,7 +64,7 @@ module.exports = function(options) {
         }
 
         ses.sendEmail({
-          Source: "events@webmaker.org",
+          Source: "Webmaker <events@webmaker.org>",
           Destination: {
             ToAddresses: [options.to],
           },
@@ -102,7 +102,7 @@ module.exports = function(options) {
       } else {
         template = 'badgeAwarded';
         subject = 'badgeAwardedSubject';
-        from = 'help@webmaker.org';
+        from = 'Webmaker <help@webmaker.org>';
       }
 
       var html = templates[template].render({
@@ -161,7 +161,7 @@ module.exports = function(options) {
         }
 
         ses.sendEmail({
-          Source: "help@webmaker.org",
+          Source: "Webmaker <help@webmaker.org>",
           Destination: {
             ToAddresses: [options.to]
           },
@@ -199,7 +199,7 @@ module.exports = function(options) {
         }
 
         ses.sendEmail({
-          Source: "help@webmaker.org",
+          Source: "Webmaker <help@webmaker.org>",
           Destination: {
             ToAddresses: [options.to]
           },
