@@ -106,7 +106,8 @@ module.exports = function(options) {
       }
 
       var html = templates[template].render({
-        email: options.email,
+        email: options.to,
+        username: options.user && options.user.username,
         badge: options.badge,
         comment: options.comment,
         gettext: i18n.getStrings(options.locale),

@@ -12,6 +12,13 @@
   <body>
 
     <p>{{ gettext.badgeAwardedSuperMentorP1 | instantiate | safe }}</p>
+
+    {% if username %}
+    <p>{{ gettext.badgesViewBadge | instantiate | safe }}</p>
+    {% else %}
+    <p>{{ gettext.badgesSignUp | instantiate | safe }}</p>
+    {% endif %}
+
     <p>{{ gettext.badgeAwardedSuperMentorP2 }}</p>
     <p>{{ gettext.badgeAwardedSuperMentorP3 }}</p>
 

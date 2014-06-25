@@ -12,6 +12,12 @@
   <body>
     <p>{{ gettext.badges1 | instantiate | safe }}</p>
 
+    {% if username %}
+    <p>{{ gettext.badgesViewBadge | instantiate | safe }}</p>
+    {% else %}
+    <p>{{ gettext.badgesSignUp | instantiate | safe }}</p>
+    {% endif %}
+
     {% if comment %}
     <p>{{ gettext.badgesYourComments }}</p>
     <p>{{ comment }}</p>
