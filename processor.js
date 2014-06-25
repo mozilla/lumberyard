@@ -29,7 +29,7 @@ queue.on("message", function(m) {
       return m.next();
     }
 
-    m.delete(function(err) {
+    m.deleteMessage(function(err) {
       if ( err ) {
         console.log(err);
       }
