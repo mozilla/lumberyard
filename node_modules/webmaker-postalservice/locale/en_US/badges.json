@@ -4,7 +4,7 @@
     "description": "Link to badges page on profile"
   },
   "badgesSignUp": {
-    "message": "In order to claim your badge, you need to <strong>sign up for <a href=\"{{ webmakerURL }}\">Webmaker</a></strong> with this email ({{ email }}). If this is not the email you want to use with your Webmaker account, contact the person who gave you this badge or email info@webmaker.org to transfer your badge to a different account.",
+    "message": "In order to claim your badge, you need to <strong>sign up for <a href=\"{{ webmakerURL }}\">Webmaker</a></strong> with this email ({{ email }}). If this is not the email you want to use with your Webmaker account, contact the person who gave you this badge or email help@webmaker.org to transfer your badge to a different account.",
     "description": "Sign up to claim your badge"
   },
   "badgeAwardedSubject": {

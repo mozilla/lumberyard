@@ -19,7 +19,7 @@
   "dependencies": {
     "hyperquest": "0.2.0",
     "sqs-queue-parallel": "0.1.5",
-    "webmaker-postalservice": "0.3.7",
+    "webmaker-postalservice": "0.3.8",
     "nodemailer": "0.6.5",
     "google-spreadsheet": "k88hudson/node-google-spreadsheet#2b53c69fa7738de3f5f1caa1662b3172df5514b4"
   },
