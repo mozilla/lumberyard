@@ -10,7 +10,7 @@ describe('Suggest Featured Resource', function() {
 
   // Google Spreadsheet
   var PUBLIC_SHEET_KEY = '1swJ87dr03nxhYvn7uJoWpybE3kcLV2bW3OGoJ-H-z3o';
-  var WORKSHEET_ID = 0;
+  var WORKSHEET_ID = 'od6';
 
   // Use real credentials, if they're available
   var username = env.get('GOOGLE_USERNAME');
@@ -39,7 +39,7 @@ describe('Suggest Featured Resource', function() {
     var spreadsheet = new GoogleSpreadsheet(PUBLIC_SHEET_KEY);
 
     it('should access a spreadsheet', function (done) {
-      spreadsheet.getRows(0, function (err, rows) {
+      spreadsheet.getRows(WORKSHEET_ID, function (err, rows) {
         if (err) {
           throw(err);
         }

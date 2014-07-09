@@ -4,7 +4,7 @@ module.exports = function (username, password) {
   return function (data, cb) {
     var docId = data.spreadsheet || process.env.SPREADSHEET_KEY;
     var spreadsheet = new GoogleSpreadsheet(docId);
-    var worksheet = data.worksheet|| 0;
+    var worksheet = data.worksheet|| 'od6';
 
     function addRow(err) {
       if (err) {
