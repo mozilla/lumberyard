@@ -23,19 +23,19 @@ queue.on("message", function(m) {
     return m.next();
   }
 
-  workers[m.data.event_type](m.data.data,function(err) {
-    if ( err ) {
-      console.log(err);
-      return m.next();
-    }
-
+  workers[m.data.event_type](m.data.data, function(err) {
     if (config.debug) {
       console.log('LUMBERYARD EVENT [' + m.data.event_type + ']: %j', m.data.data);
     }
 
+    if ( err ) {
+      console.log("Error from %s worker:\n%s", m.data.event_type, err.stack);
+      return m.next();
+    }
+
     m.deleteMessage(function(err) {
       if ( err ) {
-        console.log(err);
+        console.log("Error deleting message:\n%s", err.stack);
       }
 
       m.next();
