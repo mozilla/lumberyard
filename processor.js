@@ -1,3 +1,7 @@
+if (process.env.NEW_RELIC_ENABLED) {
+  require("newrelic");
+}
+
 var workers = require("./workers")({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,

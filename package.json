@@ -20,6 +20,7 @@
     "hyperquest": "0.2.0",
     "sqs-queue-parallel": "0.1.5",
     "webmaker-postalservice": "0.3.11",
+    "newrelic": "1.10.3",
     "nodemailer": "0.6.5",
     "google-spreadsheet": "k88hudson/node-google-spreadsheet"
   },
