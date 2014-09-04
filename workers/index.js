@@ -19,6 +19,7 @@ module.exports = function(config) {
     sign_up_for_bsd: require("./sign_up_for_bsd"),
     send_mofo_staff_email: require("./send_mofo_staff_email")(config.mofoStaffEmail, mailer),
     badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
-    google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword)
+    google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword),
+    hello_world: require("./hello_world")
   };
 };
