@@ -17,12 +17,11 @@
   },
   "homepage": "https://github.com/jbuck/lumberyard",
   "dependencies": {
-    "async": "^0.9.0",
-    "aws-sdk": "^2.0.15",
     "google-spreadsheet": "k88hudson/node-google-spreadsheet",
     "hyperquest": "0.2.0",
     "newrelic": "1.10.3",
     "nodemailer": "0.6.5",
+    "sqs-processor": "^1.0.0",
     "webmaker-postalservice": "0.3.11"
   },
   "devDependencies": {
