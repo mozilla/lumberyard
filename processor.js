@@ -17,7 +17,8 @@ var workers = require("./workers")({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   webmakerURL: process.env.WEBMAKER_URL,
   googleUsername: process.env.GOOGLE_USERNAME,
-  googlePassword: process.env.GOOGLE_PASSWORD
+  googlePassword: process.env.GOOGLE_PASSWORD,
+  mailgunAPIKey: process.env.MAILGUN_API_KEY
 });
 
 queue.startPolling(

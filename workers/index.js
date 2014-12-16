@@ -13,8 +13,11 @@ module.exports = function(config) {
     AWSSecretKey: config.secretAccessKey
   });
 
+  // For mail address validation
+  var emailValidator = require('mailgun-validator')(config.mailgunAPIKey);
+
   return {
-    mailer: require("./mailer")(mailerTransport),
+    mailer: require("./mailer")(mailerTransport, emailValidator),
     sign_up_for_bsd: require("./sign_up_for_bsd"),
     badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
     google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword),
