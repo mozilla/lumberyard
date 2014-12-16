@@ -22,10 +22,10 @@ module.exports = function (transport, validator) {
         return cb(new Error('Mailer: email "to" address could not be validated due to API call errors (' + err + '). '));
       }
 
+      // When email validation fails we don't build an email, and we send a
+      // signal that "everything has been handled correctly" by calling back.
       if (!res.is_valid) {
-        // When email validation fails we don't build an email, and we send a
-        // signal that "everything has been handled correctly" by calling back.
-        return cb();
+        return  cb(false, { messageId: 'Passed over due to bad "to:" address. ' });
       }
 
       // Automatically generate plain text
