@@ -19,6 +19,7 @@
   "dependencies": {
     "google-spreadsheet": "k88hudson/node-google-spreadsheet",
     "hyperquest": "0.2.0",
+    "mailgun-validator": "0.0.2",
     "newrelic": "1.10.3",
     "nodemailer": "0.6.5",
     "sqs-processor": "^1.0.0",

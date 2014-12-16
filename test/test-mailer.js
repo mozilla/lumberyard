@@ -8,7 +8,8 @@ describe('Mailer', function() {
   var mockTransport = nodemailer.createTransport(StdoutTransport, {
     name: "0.0.0.0" // hostname for generating Message-ID values
   });
-  var mailer = mailerInit(mockTransport);
+  var emailValidator = require('mailgun-validator')('silverback-wondermonkey');
+  var mailer = mailerInit(mockTransport, emailValidator);
 
   function TestInstance() {
     this.from = 'kate@kate.com';

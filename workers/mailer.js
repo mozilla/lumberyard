@@ -1,4 +1,5 @@
-module.exports = function (transport) {
+module.exports = function (transport, validator) {
+
   return function (data, cb) {
 
     // Check required fields
@@ -16,11 +17,23 @@ module.exports = function (transport) {
       return cb(new Error(errMessage));
     }
 
-    // Automatically generate plain text
-    data.generateTextFromHTML = true;
+    validator.validate(data.to, function(err, res) {
+      if (err) {
+        return cb(new Error('Mailer: email "to" address could not be validated due to API call errors (' + err + '). '));
+      }
 
-    // Send
-    transport.sendMail(data, cb);
+      if (!res.is_valid) {
+        // When email validation fails we don't build an email, and we send a
+        // signal that "everything has been handled correctly" by calling back.
+        return cb();
+      }
+
+      // Automatically generate plain text
+      data.generateTextFromHTML = true;
+
+      // Send
+      transport.sendMail(data, cb);
+    });
 
   };
 };
