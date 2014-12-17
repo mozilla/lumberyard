@@ -2,8 +2,14 @@ var hyperquest = require("hyperquest");
 var querystring = require("querystring");
 
 module.exports = function(data, cb) {
+  var signup = new Buffer(querystring.stringify({
+    "custom-1216": 1,
+    email: data.email
+  }));
+
   var post = hyperquest.post({
     headers: {
+      "Content-Length": signup.length,
       "Content-Type": "application/x-www-form-urlencoded"
     },
     uri: "https://sendto.mozilla.org/page/s/webmaker"
@@ -20,10 +26,5 @@ module.exports = function(data, cb) {
     response.on("end", cb)
   });
 
-  var signup = querystring.stringify({
-    "custom-1216": 1,
-    email: data.email
-  });
-
-  post.end(new Buffer(signup));
+  post.end(signup);
 };
