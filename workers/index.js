@@ -21,6 +21,7 @@ module.exports = function(config) {
     sign_up_for_bsd: require("./sign_up_for_bsd"),
     badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
     google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword),
-    hello_world: require("./hello_world")
+    hello_world: require("./hello_world"),
+    send_sms: require("./send_sms")
   };
 };
