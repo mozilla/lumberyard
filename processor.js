@@ -18,7 +18,10 @@ var workers = require("./workers")({
   webmakerURL: process.env.WEBMAKER_URL,
   googleUsername: process.env.GOOGLE_USERNAME,
   googlePassword: process.env.GOOGLE_PASSWORD,
-  mailgunAPIKey: process.env.MAILGUN_API_KEY
+  mailgunAPIKey: process.env.MAILGUN_API_KEY,
+  twilioSid: process.env.TWILIO_SID,
+  twilioAuthToken: process.env.TWILIO_AUTH_TOKEN,
+  twilioFrom: process.env.TWILIO_FROM_NUMBER
 });
 
 queue.startPolling(

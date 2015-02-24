@@ -22,6 +22,6 @@ module.exports = function(config) {
     badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
     google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword),
     hello_world: require("./hello_world"),
-    send_sms: require("./send_sms")
+    send_sms: require("./send_sms")(config.twilioSid, config.twilioAuthToken, config.twilioFrom)
   };
 };
