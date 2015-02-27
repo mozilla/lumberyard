@@ -45,7 +45,6 @@ queue.startPolling(
   function error(poll_error) {
     console.log(poll_error);
     console.log(poll_error.stack);
-    process.exit(1);
   }
 );
 
