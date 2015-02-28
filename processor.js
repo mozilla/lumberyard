@@ -1,7 +1,3 @@
-if (process.env.NEW_RELIC_ENABLED) {
-  require("newrelic");
-}
-
 var SQSProcessor = require("sqs-processor");
 
 var queue = new SQSProcessor({
