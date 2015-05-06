@@ -24,8 +24,8 @@ module.exports = function (transport, validator) {
 
       // When email validation fails we don't build an email, and we send a
       // signal that "everything has been handled correctly" by calling back.
-      if (!res.is_valid) {
-        return  cb(false, { messageId: 'Passed over due to bad "to:" address. ' });
+      if (res && !res.is_valid) {
+        return cb(new Error('Mailer: email "to" address is not valid (' + data.to + ')'));
       }
 
       // Automatically generate plain text
