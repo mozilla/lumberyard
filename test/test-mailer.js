@@ -3,11 +3,9 @@ var should = require('should');
 describe('Mailer', function() {
   var nodemailer = require('nodemailer');
   var mailerInit = require('../workers/mailer');
-  var StdoutTransport = require('./utils/stdoutTransport');
+  var StubTransport = require('nodemailer-stub-transport');
 
-  var mockTransport = nodemailer.createTransport(StdoutTransport, {
-    name: "0.0.0.0" // hostname for generating Message-ID values
-  });
+  var mockTransport = nodemailer.createTransport(StubTransport());
   var emailValidator = require('mailgun-validator')('silverback-wondermonkey');
   var mailer = mailerInit(mockTransport, emailValidator);
 

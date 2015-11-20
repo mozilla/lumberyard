@@ -27,9 +27,10 @@
     "webmaker-postalservice": "0.3.11"
   },
   "devDependencies": {
-    "should": "3.3.1",
+    "habitat": "^1.1.0",
     "mocha": "^1.19.0",
-    "habitat": "^1.1.0"
+    "nodemailer-stub-transport": "1.0.0",
+    "should": "3.3.1"
   },
   "engines": {
     "node": "4.2.2"
