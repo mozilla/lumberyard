@@ -8,10 +8,12 @@ module.exports = function(config) {
   });
 
   // For new mailer
-  var mailerTransport = require("nodemailer").createTransport("SES", {
+  var nodemailer = require("nodemailer");
+  var sesTransport = require("nodemailer-ses-transport");
+  var mailerTransport = nodemailer.createTransport(sesTransport({
     AWSAccessKeyID: config.accessKeyId,
     AWSSecretKey: config.secretAccessKey
-  });
+  }));
 
   // For mail address validation
   var emailValidator = require('mailgun-validator')(config.mailgunAPIKey);
