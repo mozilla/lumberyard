@@ -20,7 +20,7 @@ module.exports = function(config) {
 
   return {
     mailer: require("./mailer")(mailerTransport, emailValidator),
-    sign_up_for_bsd: require("./sign_up_for_bsd"),
+    sign_up_for_webmaker_mailing_list: require("./sign_up_for_webmaker_mailing_list"),
     badge_awarded_send_email: require("./badge_awarded_send_email")(mailer),
     google_spreadsheet: require("./google_spreadsheet")(config.googleUsername, config.googlePassword),
     hello_world: require("./hello_world"),
