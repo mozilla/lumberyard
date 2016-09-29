@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '0.10'
+- '4.6.0'
 env:
   global:
   - secure: G4OiSKGtogAxiP2IPRHCkOmt6V8+C3b8/j3fZuzz/+h5WhqKb10rMnt2OWENwC6VwLxbofseMnI0KvOspweGBSFhV5RMvmE7EK6JrJlbunrlK3swBzOAPdot3tTc+9EAMnxKTy8EohpHr8hnBoiY/dbzFYSFjzbXHW0t9OxxA5U=
