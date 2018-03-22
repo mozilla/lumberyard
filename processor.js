@@ -4,20 +4,12 @@ var queue = new SQSProcessor({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   region: process.env.AWS_QUEUE_REGION,
-  queueUrl: process.env.INCOMING_QUEUE_URL,
-  debug: process.env.DEBUG === 'true'
+  queueUrl: process.env.INCOMING_QUEUE_URL
 });
 
 var workers = require("./workers")({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  webmakerURL: process.env.WEBMAKER_URL,
-  googleUsername: process.env.GOOGLE_USERNAME,
-  googlePassword: process.env.GOOGLE_PASSWORD,
-  mailgunAPIKey: process.env.MAILGUN_API_KEY,
-  twilioSid: process.env.TWILIO_SID,
-  twilioAuthToken: process.env.TWILIO_AUTH_TOKEN,
-  twilioFrom: process.env.TWILIO_FROM_NUMBER
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
 
 queue.startPolling(
