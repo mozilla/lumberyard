@@ -20,7 +20,13 @@ module.exports = function (transport) {
     // Automatically generate plain text
     data.generateTextFromHTML = true;
 
-    // Send
-    transport.sendMail(data, cb);
+    // Send if livemode is true, or if no livemode flag is indicated (backwards compatibility for other workers)
+    if (!data.hasOwnProperty('livemode') || data.livemode) {
+      transport.sendMail(data, cb);
+    } else {
+      console.log('Dumping email to console because livemode is disabled');
+      console.log(`To: ${data.to}\nFrom: ${data.from}\nBody: ${data.html}`);
+      cb();
+    }
   };
 };
